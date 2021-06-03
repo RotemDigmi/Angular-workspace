@@ -1,0 +1,109 @@
+<section>
+  <div class="classbox">
+    <h1>Add Coupon</h1>
+
+    <form #formInfo="ngForm">
+      <p>Category</p>
+      <select
+        #categoryInfo="ngModel"
+        name="category"
+        [(ngModel)]="coupon.category"
+        required
+      >
+        <option *ngFor="let c of categories">{{ c }}</option>
+      </select>
+
+      <span *ngIf="categoryInfo.errors?.required && categoryInfo.touched"
+        >*</span
+      >
+
+      <p>Title</p>
+      <input
+        #titleInfo="ngModel"
+        name="title"
+        type="text"
+        placeholder="Enter title"
+        [(ngModel)]="coupon.title"
+        required
+      />
+      <span *ngIf="titleInfo.errors?.required && titleInfo.touched">*</span>
+
+      <p>Description</p>
+      <input
+        #descriptionInfo="ngModel"
+        name="description"
+        type="text"
+        placeholder="Enter description"
+        [(ngModel)]="coupon.description"
+        required
+      />
+      <span *ngIf="descriptionInfo.errors?.required && descriptionInfo.touched"
+        >*</span
+      >
+
+      <p>Start date</p>
+      <input
+        #startDateInfo="ngModel"
+        name="startDate"
+        type="date"
+        placeholder="Enter start date"
+        [(ngModel)]="coupon.startDate"
+        required
+      />
+      <span *ngIf="startDateInfo.errors?.required && startDateInfo.touched"
+        >*</span
+      >
+
+      <p>End date</p>
+      <input
+        #endDateInfo="ngModel"
+        name="endDate"
+        type="date"
+        placeholder="Enter end date"
+        [(ngModel)]="coupon.endDate"
+        required
+      />
+      <span *ngIf="endDateInfo.errors?.required && endDateInfo.touched">*</span>
+
+      <p>Amount</p>
+      <input
+        #amountInfo="ngModel"
+        name="amount"
+        type="number"
+        placeholder="Enter amount"
+        [(ngModel)]="coupon.amount"
+        required
+      />
+      <span *ngIf="amountInfo.errors?.required && amountInfo.touched">*</span>
+
+      <p>Price</p>
+      <input
+        #priceInfo="ngModel"
+        name="price"
+        type="number"
+        placeholder="Enter price"
+        [(ngModel)]="coupon.price"
+        required
+      />
+      <span *ngIf="priceInfo.errors?.required && priceInfo.touched">*</span>
+
+      <p>Image</p>
+      <input
+        #imageInfo="ngModel"
+        name="image"
+        type="text"
+        placeholder="Enter image"
+        [(ngModel)]="coupon.image"
+        required
+      />
+      <span *ngIf="imageInfo.errors?.required && imageInfo.touched">*</span>
+
+      <input
+        type="submit"
+        value="Add now"
+        (click)="addCoupon()"
+        [disabled]="formInfo.form.invalid"
+      />
+    </form>
+  </div>
+</section>

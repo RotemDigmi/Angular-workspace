@@ -1,0 +1,104 @@
+section {
+  margin: 0;
+  padding: 0;
+  background-image: url("/assets/icons/5.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.classbox {
+  width: 320px;
+  height: 350px;
+  background: #000;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 30px 30px;
+  border-radius: 20px;
+}
+
+h1 {
+  margin: 0;
+  padding: 0 0 16px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.classbox p {
+  margin-top: 28px;
+  padding: 0;
+  font-weight: bold;
+}
+
+.classbox input,
+select {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.classbox select {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.classbox input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #fb2525;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.classbox input[type="submit"]:hover {
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+}
+
+.classbox span {
+  font-size: 14px;
+  line-height: 20px;
+  color: #fb2525;
+}
+
+select {
+  background-color: #000;
+}
+
+table {
+  background-color: #000;
+  margin: auto;
+  width: 60%;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  color: #fff;
+  border: solid;
+}
+
+img {
+  display: block;
+  margin: auto;
+  width: 50px;
+}
+
+:host {
+  display: block;
+  height: 100%;
+  overflow: auto;
+}

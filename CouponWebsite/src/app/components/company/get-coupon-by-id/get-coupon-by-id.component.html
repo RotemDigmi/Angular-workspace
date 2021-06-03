@@ -1,0 +1,63 @@
+<section>
+  <ng-template #formGet>
+    <div class="classbox">
+      <h1>Which coupon would you like to get?</h1>
+
+      <form #formInfo="ngForm">
+        <p>Coupon id</p>
+        <input
+          #couponIdInfo="ngModel"
+          name="couponId"
+          type="number"
+          placeholder="Enter coupon id"
+          [(ngModel)]="couponId"
+          required
+        />
+
+        <span *ngIf="couponIdInfo.errors?.required && couponIdInfo.touched"
+          >*Please enter a coupon id</span
+        >
+
+        <input
+          type="submit"
+          value="Get now"
+          (click)="getOneCoupon()"
+          [disabled]="formInfo.form.invalid"
+        />
+      </form>
+    </div>
+  </ng-template>
+
+  <!-- <ng-template #loading>
+    <img src="assets/icons/loading.gif" alt="loading" />
+  </ng-template> -->
+
+  <table *ngIf="coupon; else formGet">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Category</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Amount</th>
+        <th>Price</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ coupon.id }}</td>
+        <td>{{ coupon.category }}</td>
+        <td>{{ coupon.title }}</td>
+        <td>{{ coupon.description }}</td>
+        <td>{{ coupon.startDate }}</td>
+        <td>{{ coupon.endDate }}</td>
+        <td>{{ coupon.amount }}</td>
+        <td>{{ coupon.price }}</td>
+        <td>{{ coupon.image }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

@@ -1,0 +1,42 @@
+section {
+  padding: 0;
+  margin: 0;
+  background-image: url("/assets/icons/5.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+div {
+  text-align: center;
+  top: 45%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+
+.active-link {
+  font-size: large;
+  font-weight: bold;
+}
+
+a {
+  display: block;
+  font-size: medium;
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+  text-decoration-line: none;
+  color: #121212;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #fb2525;
+}

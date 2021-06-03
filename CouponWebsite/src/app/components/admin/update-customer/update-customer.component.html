@@ -1,0 +1,83 @@
+<section>
+  <div class="classbox">
+    <h1>Update Customer</h1>
+
+    <form #formInfo="ngForm">
+      <p>A customer you want to update</p>
+      <input
+        #customerIdInfo="ngModel"
+        name="customerId"
+        type="number"
+        placeholder="Enter customer id"
+        [(ngModel)]="customerId"
+        required
+      />
+      <span *ngIf="customerIdInfo.errors?.required && customerIdInfo.touched"
+        >*Please enter a customer id</span
+      >
+
+      <p>First name</p>
+      <input
+        #firstNameInfo="ngModel"
+        name="firstName"
+        type="text"
+        placeholder="Enter new or current first name"
+        [(ngModel)]="customer.firstName"
+        required
+      />
+      <span *ngIf="firstNameInfo.errors?.required && firstNameInfo.touched"
+        >*Type a new or current first name</span
+      >
+
+      <p>Last name</p>
+      <input
+        #lastNameInfo="ngModel"
+        name="lastName"
+        type="text"
+        placeholder="Enter new or current last name"
+        [(ngModel)]="customer.lastName"
+        required
+      />
+      <span *ngIf="lastNameInfo.errors?.required && lastNameInfo.touched"
+        >*Type a new or current last name</span
+      >
+
+      <p>Email</p>
+      <input
+        #emailInfo="ngModel"
+        name="email"
+        type="text"
+        placeholder="Enter a new or current email"
+        [(ngModel)]="customer.email"
+        required
+        pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+      />
+      <span *ngIf="emailInfo.errors?.required && emailInfo.touched"
+        >*Type an new or current email</span
+      >
+      <span *ngIf="emailInfo.errors?.pattern && emailInfo.touched"
+        >*Incorrect email address</span
+      >
+
+      <p>Password</p>
+      <input
+        #passwordInfo="ngModel"
+        name="password"
+        type="password"
+        placeholder="Enter a new or current Password"
+        [(ngModel)]="customer.password"
+        required
+      />
+      <span *ngIf="passwordInfo.errors?.required && passwordInfo.touched"
+        >*Type a new or current password</span
+      >
+
+      <input
+        type="submit"
+        value="Update now"
+        (click)="updateCustomer()"
+        [disabled]="formInfo.form.invalid"
+      />
+    </form>
+  </div>
+</section>

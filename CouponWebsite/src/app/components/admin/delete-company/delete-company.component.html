@@ -1,0 +1,28 @@
+<section>
+  <div class="classbox">
+    <h1>Which company would you like to delete?</h1>
+
+    <form #formInfo="ngForm">
+      <p>Company id</p>
+      <input
+        #companyIdInfo="ngModel"
+        name="companyId"
+        type="number"
+        placeholder="Enter company id"
+        [(ngModel)]="companyId"
+        required
+      />
+
+      <input
+        type="submit"
+        value="Delete"
+        (click)="deleteCompany()"
+        [disabled]="formInfo.form.invalid"
+      />
+
+      <span *ngIf="companyIdInfo.errors?.required && companyIdInfo.touched"
+        >*Please enter a company id</span
+      >
+    </form>
+  </div>
+</section>

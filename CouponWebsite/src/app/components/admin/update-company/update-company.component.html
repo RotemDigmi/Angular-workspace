@@ -1,0 +1,60 @@
+<section>
+  <div class="classbox">
+    <h1>Update Company</h1>
+
+    <form #formInfo="ngForm">
+      <p>A company you want to update</p>
+      <input
+        #companyIdInfo="ngModel"
+        name="companyId"
+        type="number"
+        placeholder="Enter company id"
+        [(ngModel)]="companyId"
+        required
+      />
+
+      <p>Email</p>
+      <input
+        #emailInfo="ngModel"
+        name="email"
+        type="text"
+        placeholder="Enter a new or current email"
+        [(ngModel)]="company.email"
+        required
+        pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+      />
+
+      <p>Password</p>
+      <input
+        #passwordInfo="ngModel"
+        name="password"
+        type="password"
+        placeholder="Enter a new or current Password"
+        [(ngModel)]="company.password"
+        required
+      />
+
+      <input
+        type="submit"
+        value="Update now"
+        (click)="updateCompany()"
+        [disabled]="formInfo.form.invalid"
+      />
+
+      <span *ngIf="companyIdInfo.errors?.required && companyIdInfo.touched"
+        >*Please enter a company id</span
+      >
+      <br />
+      <span *ngIf="emailInfo.errors?.required && emailInfo.touched"
+        >*Type an new or current email</span
+      >
+      <span *ngIf="emailInfo.errors?.pattern && emailInfo.touched"
+        >*Incorrect email address</span
+      >
+      <br />
+      <span *ngIf="passwordInfo.errors?.required && passwordInfo.touched"
+        >*Type a new or current Password</span
+      >
+    </form>
+  </div>
+</section>

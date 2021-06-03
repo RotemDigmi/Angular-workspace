@@ -1,0 +1,28 @@
+<section>
+  <div class="classbox">
+    <h1>Which coupon would you like to purchase?</h1>
+
+    <form #formInfo="ngForm">
+      <p>Coupon id</p>
+      <input
+        #couponIdInfo="ngModel"
+        name="couponId"
+        type="number"
+        placeholder="Enter coupon id"
+        [(ngModel)]="couponId"
+        required
+      />
+
+      <input
+        type="submit"
+        value="Purchase Now"
+        (click)="purchaseCoupon()"
+        [disabled]="formInfo.form.invalid"
+      />
+
+      <span *ngIf="couponIdInfo.errors?.required && couponIdInfo.touched"
+        >*Please enter a coupon id</span
+      >
+    </form>
+  </div>
+</section>

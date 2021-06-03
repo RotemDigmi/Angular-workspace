@@ -1,0 +1,74 @@
+<section>
+  <div class="classbox">
+    <h1>Add Customer</h1>
+
+    <form #formInfo="ngForm">
+      <p>First name</p>
+      <input
+        #firstNameInfo="ngModel"
+        name="firstName"
+        type="text"
+        placeholder="Enter first name"
+        [(ngModel)]="customer.firstName"
+        required
+      />
+
+      <p>Last name</p>
+      <input
+        #lastNameInfo="ngModel"
+        name="lastName"
+        type="text"
+        placeholder="Enter last name"
+        [(ngModel)]="customer.lastName"
+        required
+      />
+
+      <p>Email</p>
+      <input
+        #emailInfo="ngModel"
+        name="email"
+        type="text"
+        placeholder="Enter Email"
+        [(ngModel)]="customer.email"
+        required
+        pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+      />
+
+      <p>Password</p>
+      <input
+        #passwordInfo="ngModel"
+        name="password"
+        type="password"
+        placeholder="Enter Password"
+        [(ngModel)]="customer.password"
+        required
+      />
+
+      <input
+        type="submit"
+        value="Add now"
+        (click)="addCustomer()"
+        [disabled]="formInfo.form.invalid"
+      />
+
+      <span *ngIf="firstNameInfo.errors?.required && firstNameInfo.touched"
+        >*Please type an first name</span
+      >
+      <br />
+      <span *ngIf="lastNameInfo.errors?.required && lastNameInfo.touched"
+        >*Please type an last name</span
+      >
+      <br />
+      <span *ngIf="emailInfo.errors?.required && emailInfo.touched"
+        >*Please type an email</span
+      >
+      <span *ngIf="emailInfo.errors?.pattern && emailInfo.touched"
+        >*Incorrect email address</span
+      >
+      <br />
+      <span *ngIf="passwordInfo.errors?.required && passwordInfo.touched"
+        >*Please type a password</span
+      >
+    </form>
+  </div>
+</section>

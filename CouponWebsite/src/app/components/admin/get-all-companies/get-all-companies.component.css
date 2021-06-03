@@ -1,0 +1,40 @@
+section {
+  margin: 0;
+  padding: 0;
+  background-image: url("/assets/icons/4.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+table {
+  background-color: #000;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+table,
+th,
+td {
+  color: #fff;
+  border: solid;
+}
+
+img {
+  display: block;
+  margin: auto;
+  width: 50px;
+}
+
+:host {
+  display: block;
+  height: 100%;
+  overflow: auto;
+}

@@ -1,0 +1,132 @@
+<section>
+  <div class="classbox">
+    <h1>Update Coupon</h1>
+
+    <form #formInfo="ngForm">
+      <p>Which coupon would you like to update?</p>
+      <input
+        #couponIdInfo="ngModel"
+        name="couponId"
+        type="number"
+        placeholder="Enter coupon id"
+        [(ngModel)]="couponId"
+        required
+      />
+      <span *ngIf="couponIdInfo.errors?.required && couponIdInfo.touched"
+        >*Please enter a coupon id</span
+      >
+
+      <p>Category</p>
+      <select
+        #categoryInfo="ngModel"
+        name="category"
+        [(ngModel)]="coupon.category"
+        required
+      >
+        <option *ngFor="let c of categories">{{ c }}</option>
+      </select>
+
+      <span *ngIf="categoryInfo.errors?.required && categoryInfo.touched"
+        >*Type a new or current category</span
+      >
+
+      <p>Title</p>
+      <input
+        #titleInfo="ngModel"
+        name="title"
+        type="text"
+        placeholder="Enter a new or current title"
+        [(ngModel)]="coupon.title"
+        required
+      />
+      <span *ngIf="titleInfo.errors?.required && titleInfo.touched"
+        >*Type a new or current title</span
+      >
+
+      <p>Description</p>
+      <input
+        #descriptionInfo="ngModel"
+        name="description"
+        type="text"
+        placeholder="Enter a new or current description"
+        [(ngModel)]="coupon.description"
+        required
+      />
+      <span *ngIf="descriptionInfo.errors?.required && descriptionInfo.touched"
+        >*Type a new or current description</span
+      >
+
+      <p>Start date</p>
+      <input
+        #startDateInfo="ngModel"
+        name="startDate"
+        type="date"
+        placeholder="Enter a new or current start date"
+        [(ngModel)]="coupon.startDate"
+        required
+      />
+      <span *ngIf="startDateInfo.errors?.required && startDateInfo.touched"
+        >*Type a new or current start date</span
+      >
+
+      <p>End date</p>
+      <input
+        #endDateInfo="ngModel"
+        name="endDate"
+        type="date"
+        placeholder="Enter a new or current end date"
+        [(ngModel)]="coupon.endDate"
+        required
+      />
+      <span *ngIf="endDateInfo.errors?.required && endDateInfo.touched"
+        >*Type a new or current end date</span
+      >
+
+      <p>Amount</p>
+      <input
+        #amountInfo="ngModel"
+        name="amount"
+        type="number"
+        placeholder="Enter a new or current amount"
+        [(ngModel)]="coupon.amount"
+        required
+      />
+      <span *ngIf="amountInfo.errors?.required && amountInfo.touched"
+        >*Type a new or current amount</span
+      >
+
+      <p>Price</p>
+      <input
+        #priceInfo="ngModel"
+        name="price"
+        type="number"
+        placeholder="Enter a new or current price"
+        [(ngModel)]="coupon.price"
+        required
+      />
+      <span *ngIf="priceInfo.errors?.required && priceInfo.touched"
+        >*Type a new or current price</span
+      >
+
+      <p>Image</p>
+      <input
+        #imageInfo="ngModel"
+        name="image"
+        type="text"
+        placeholder="Enter a new or current image"
+        [(ngModel)]="coupon.image"
+        required
+      />
+      <span *ngIf="imageInfo.errors?.required && imageInfo.touched"
+        >*Type a new or current image</span
+      >
+
+      <input
+        type="submit"
+        value="Update now"
+        (click)="updateCoupon()"
+        [disabled]="formInfo.form.invalid"
+      />
+    </form>
+  </div>
+</section>

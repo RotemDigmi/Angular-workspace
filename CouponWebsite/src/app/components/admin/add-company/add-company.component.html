@@ -1,0 +1,60 @@
+<section>
+  <div class="classbox">
+    <h1>Add Company</h1>
+
+    <form #formInfo="ngForm">
+      <p>Name</p>
+      <input
+        #nameInfo="ngModel"
+        name="name"
+        type="text"
+        placeholder="Enter Name"
+        [(ngModel)]="company.name"
+        required
+      />
+
+      <p>Email</p>
+      <input
+        #emailInfo="ngModel"
+        name="email"
+        type="text"
+        placeholder="Enter Email"
+        [(ngModel)]="company.email"
+        required
+        pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+      />
+
+      <p>Password</p>
+      <input
+        #passwordInfo="ngModel"
+        name="password"
+        type="password"
+        placeholder="Enter Password"
+        [(ngModel)]="company.password"
+        required
+      />
+
+      <input
+        type="submit"
+        value="Add now"
+        (click)="addCompany()"
+        [disabled]="formInfo.form.invalid"
+      />
+
+      <span *ngIf="nameInfo.errors?.required && nameInfo.touched"
+        >*Please type an company name</span
+      >
+      <br />
+      <span *ngIf="emailInfo.errors?.required && emailInfo.touched"
+        >*Please type an email</span
+      >
+      <span *ngIf="emailInfo.errors?.pattern && emailInfo.touched"
+        >*Incorrect email address</span
+      >
+      <br />
+      <span *ngIf="passwordInfo.errors?.required && passwordInfo.touched"
+        >*Please type a password</span
+      >
+    </form>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<section>
+  <h1>Your details</h1>
+  <ng-template #loading>
+    <img src="assets/icons/loading.gif" alt="loading" />
+  </ng-template>
+
+  <table *ngIf="customer; else loading">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.firstName }}</td>
+        <td>{{ customer.lastName }}</td>
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.password }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

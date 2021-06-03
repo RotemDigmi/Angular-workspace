@@ -1,0 +1,28 @@
+<section>
+  <div class="classbox">
+    <h1>Which customer would you like to delete?</h1>
+
+    <form #formInfo="ngForm">
+      <p>Customer id</p>
+      <input
+        #customerIdInfo="ngModel"
+        name="customerId"
+        type="number"
+        placeholder="Enter customer id"
+        [(ngModel)]="customerId"
+        required
+      />
+
+      <input
+        type="submit"
+        value="Delete"
+        (click)="deleteCustomer()"
+        [disabled]="formInfo.form.invalid"
+      />
+
+      <span *ngIf="customerIdInfo.errors?.required && customerIdInfo.touched"
+        >*Please enter a customer id</span
+      >
+    </form>
+  </div>
+</section>
